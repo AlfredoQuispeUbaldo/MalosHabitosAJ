@@ -1,12 +1,22 @@
 # Esta función principal ejecuta el código principal del programa
 def main():
     # Definir las variables
-    num1 = 5
-    num2 = 3
-    num3 = 7
+
+    while True:
+        try:
+            numero1 = float(input("Ingrese numero 01: "))
+            numero2 = float(input("Ingrese numero 02: "))
+            numero3 = float(input("Ingrese numero 03: "))
+
+            if numero1.is_integer() or numero2.is_integer() or numero3.is_integer():
+                break
+            else:
+                raise ValueError("Por favor, ingrese un numero valido.")
+        except ValueError:
+            print("Por favor, ingrese un número válido")
 
     # Calcular el resultado llamando a la función 'calcular'
-    resultado = calcular(num1, num2, num3)
+    resultado = calcular(numero1, numero2, numero3)
 
     # Mostrar el resultado
     print("El resultado es:", resultado)
